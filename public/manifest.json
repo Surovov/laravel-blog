@@ -1,0 +1,100 @@
+{
+  "resources/assets/admin/bootstrap/fonts/glyphicons-halflings-regular.eot": {
+    "file": "assets/glyphicons-halflings-regular.BUJKDMgK.eot",
+    "src": "resources/assets/admin/bootstrap/fonts/glyphicons-halflings-regular.eot"
+  },
+  "resources/assets/admin/bootstrap/fonts/glyphicons-halflings-regular.html": {
+    "file": "assets/glyphicons-halflings-regular.DzqM6ju8.html",
+    "src": "resources/assets/admin/bootstrap/fonts/glyphicons-halflings-regular.html"
+  },
+  "resources/assets/admin/bootstrap/fonts/glyphicons-halflings-regular.svg": {
+    "file": "assets/glyphicons-halflings-regular.CSehLiBc.svg",
+    "src": "resources/assets/admin/bootstrap/fonts/glyphicons-halflings-regular.svg"
+  },
+  "resources/assets/admin/bootstrap/fonts/glyphicons-halflings-regular.ttf": {
+    "file": "assets/glyphicons-halflings-regular.DrwTMapi.ttf",
+    "src": "resources/assets/admin/bootstrap/fonts/glyphicons-halflings-regular.ttf"
+  },
+  "resources/assets/admin/bootstrap/fonts/glyphicons-halflings-regular.woff": {
+    "file": "assets/glyphicons-halflings-regular.BKjkU69z.woff",
+    "src": "resources/assets/admin/bootstrap/fonts/glyphicons-halflings-regular.woff"
+  },
+  "resources/assets/admin/bootstrap/fonts/glyphicons-halflings-regulard41d.eot": {
+    "file": "assets/glyphicons-halflings-regular.BUJKDMgK.eot",
+    "src": "resources/assets/admin/bootstrap/fonts/glyphicons-halflings-regular.eot"
+  },
+  "resources/assets/admin/dist/fonts/fontawesome-webfont.eot": {
+    "file": "assets/fontawesome-webfont.G5YE5S7X.eot",
+    "src": "resources/assets/admin/dist/fonts/fontawesome-webfont.eot"
+  },
+  "resources/assets/admin/dist/fonts/fontawesome-webfont.svg": {
+    "file": "assets/fontawesome-webfont.D13rzr4g.svg",
+    "src": "resources/assets/admin/dist/fonts/fontawesome-webfont.svg"
+  },
+  "resources/assets/admin/dist/fonts/fontawesome-webfont.ttf": {
+    "file": "assets/fontawesome-webfont.CQDK8MU3.ttf",
+    "src": "resources/assets/admin/dist/fonts/fontawesome-webfont.ttf"
+  },
+  "resources/assets/admin/dist/fonts/fontawesome-webfont.woff": {
+    "file": "assets/fontawesome-webfont.CDK5bt4p.woff",
+    "src": "resources/assets/admin/dist/fonts/fontawesome-webfont.woff"
+  },
+  "resources/assets/admin/dist/fonts/fontawesome-webfont.woff2": {
+    "file": "assets/fontawesome-webfont.B-jkhYfk.woff2",
+    "src": "resources/assets/admin/dist/fonts/fontawesome-webfont.woff2"
+  },
+  "resources/assets/admin/dist/img/boxed-bg.jpg": {
+    "file": "assets/boxed-bg.dw-g9FG8.jpg",
+    "src": "resources/assets/admin/dist/img/boxed-bg.jpg"
+  },
+  "resources/assets/admin/main.css": {
+    "file": "assets/style.BrVZWms_.css",
+    "src": "resources/assets/admin/main.css",
+    "isEntry": true
+  },
+  "resources/assets/admin/main.js": {
+    "file": "assets/main-_oBLj1Th.js",
+    "name": "main",
+    "src": "resources/assets/admin/main.js",
+    "isEntry": true,
+    "css": [
+      "assets/main.BjaYUEdX.css"
+    ]
+  },
+  "resources/assets/admin/plugins/iCheck/minimal/aero.png": {
+    "file": "assets/aero.BKhjgkGe.png",
+    "src": "resources/assets/admin/plugins/iCheck/minimal/aero.png"
+  },
+  "resources/assets/admin/plugins/iCheck/minimal/blue.png": {
+    "file": "assets/blue.D-76G-8e.png",
+    "src": "resources/assets/admin/plugins/iCheck/minimal/blue.png"
+  },
+  "resources/assets/admin/plugins/iCheck/minimal/green.png": {
+    "file": "assets/green.k6YmPwDl.png",
+    "src": "resources/assets/admin/plugins/iCheck/minimal/green.png"
+  },
+  "resources/assets/admin/plugins/iCheck/minimal/grey.png": {
+    "file": "assets/grey.nVHjPV8f.png",
+    "src": "resources/assets/admin/plugins/iCheck/minimal/grey.png"
+  },
+  "resources/assets/admin/plugins/iCheck/minimal/orange.png": {
+    "file": "assets/orange.C2u4p2R-.png",
+    "src": "resources/assets/admin/plugins/iCheck/minimal/orange.png"
+  },
+  "resources/assets/admin/plugins/iCheck/minimal/pink.png": {
+    "file": "assets/pink.C9e0Y2o6.png",
+    "src": "resources/assets/admin/plugins/iCheck/minimal/pink.png"
+  },
+  "resources/assets/admin/plugins/iCheck/minimal/purple.png": {
+    "file": "assets/purple.BgEwAWpv.png",
+    "src": "resources/assets/admin/plugins/iCheck/minimal/purple.png"
+  },
+  "resources/assets/admin/plugins/iCheck/minimal/red.png": {
+    "file": "assets/red.fUPLbBr6.png",
+    "src": "resources/assets/admin/plugins/iCheck/minimal/red.png"
+  },
+  "resources/assets/admin/plugins/iCheck/minimal/yellow.png": {
+    "file": "assets/yellow.D_oaVcOQ.png",
+    "src": "resources/assets/admin/plugins/iCheck/minimal/yellow.png"
+  }
+}
