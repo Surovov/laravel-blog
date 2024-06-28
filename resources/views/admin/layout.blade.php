@@ -11,7 +11,11 @@
   	.wrapper {
   		height: 100vh;
   	}
-  </style>>
+    table.table form {
+      display: inline-block;
+    }
+    button.delete {background: none; border: none; color: red; padding: 0px;}
+  </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <!-- Site wrapper -->
