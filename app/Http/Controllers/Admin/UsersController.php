@@ -34,7 +34,7 @@ class UsersController extends Controller
                     ->withErrors($validator)
                     ->withInput();
             }
-
+            
             $user = User::add($request->all());
             $user->uploadAvatar($request->file('avatar'));
             return redirect()->route('users.index');
@@ -70,6 +70,7 @@ class UsersController extends Controller
 
             return redirect()->route('users.index');
         }
+
 
 
 

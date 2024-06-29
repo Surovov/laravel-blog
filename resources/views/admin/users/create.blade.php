@@ -1,67 +1,41 @@
 @extends('admin.layout')
 
 @section('content')
+{!! html()
+    ->form()
+    ->route('users.store')
+    ->attribute('enctype', 'multipart/form-data')
+    ->open() !!}
 
-<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
-<!-- Content Header (Page header) -->
-<section class="content-header">
-  <h1>
-    Добавить пользователя
-    <small>приятные слова..</small>
-  </h1>
-</section>
+<h3 class="uk-heading-bullet">Добавляем пользователя</h3>
 
-<!-- Main content -->
-<section class="content">
-
-  <!-- Default box -->
-  <div class="box">
-    {!! html()
-        ->form()
-        ->route('users.store')
-        ->attribute('enctype', 'multipart/form-data')
-        ->open() !!}
-    <div class="box-header with-border">
-      <h3 class="box-title">Добавляем пользователя</h3>
-        @include('admin.errors')
-
-    </div>
-    <div class="box-body">
-      <div class="col-md-6">
-        <div class="form-group">
-            {!! html()->label('Имя', 'name') !!}
-            {!! html()->text('name')->attribute('class', 'form-control') !!}
-        </div>
-        <div class="form-group">
-            {!! html()->label('E-mail', 'email') !!}
-            {!! html()->email('email')->attribute('class', 'form-control') !!}
-         </div>
-        <div class="form-group">
-            {!! html()->label('Пароль', 'password') !!}
-            {!! html()->password('password')->attribute('class', 'form-control') !!}
-        </div>
-        <div class="form-group">
-          {!! html()->label('Аватар', 'avatar') !!}
-          {!! html()->file('avatar')->attribute('class', 'form-control') !!}
-          <p class="help-block">Какое-нибудь уведомление о форматах..</p>
-        </div>
-      </div>
-    </div>
-    <!-- /.box-body -->
-    <div class="box-footer">
-        <a href="{{route('users.index')}}" class="btn btn-default">Назад</a>
-        {!! html()->submit('Добавить')->attribute('class', 'btn btn-success pull-right') !!}
-    </div>
-    <!-- /.box-footer-->
-    {!! html()->form()->close() !!}
-
-  </div>
-  <!-- /.box -->
-
-</section>
-<!-- /.content -->
+<div class="uk-margin">
+    {!! html()->label('Имя', 'name')->attribute('class', 'uk-form-label') !!}
+    {!! html()->text('name')->attribute('class', 'uk-input') !!}
 </div>
-<!-- /.content-wrapper -->
 
+<div class="uk-margin">
+    {!! html()->label('E-mail', 'email')->attribute('class', 'uk-form-label') !!}
+    {!! html()->email('email')->attribute('class', 'uk-input') !!}
+</div>
+
+<div class="uk-margin">
+    {!! html()->label('Пароль', 'password')->attribute('class', 'uk-form-label') !!}
+    {!! html()->password('password')->attribute('class', 'uk-input') !!}
+</div>
+
+<div class="uk-margin" uk-margin>
+    {!! html()->label('Аватар', 'avatar')->attribute('class', 'uk-form-label') !!}
+    <div uk-form-custom="target: true">
+        <input type="file" name="avatar" aria-label="Custom controls">
+        <input class="uk-input uk-form-width-medium" type="text" placeholder="Выберите файл" aria-label="Custom controls" disabled>
+    </div>
+</div>
+
+<div class="uk-margin uk-text-right">
+    <a href="{{ route('users.index') }}" class="uk-button uk-button-default">Назад</a>
+    {!! html()->submit('Добавить')->attribute('class', 'uk-button uk-button-primary') !!}
+</div>
+
+{!! html()->form()->close() !!}
 @endsection

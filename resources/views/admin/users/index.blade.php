@@ -1,76 +1,42 @@
 @extends('admin.layout')
 
 @section('content')
-<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
-<!-- Content Header (Page header) -->
-<section class="content-header">
-  <h1>
-    Blank page
-    <small>it all starts here</small>
-  </h1>
-  <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li><a href="#">Examples</a></li>
-    <li class="active">Blank page</li>
-  </ol>
-</section>
+<div>
+    <div class="uk-flex uk-flex-between uk-flex-middle uk-margin">
+        <h3 class="uk-heading-bullet">Листинг пользователей</h3>
+        <a href="{{ route('users.create') }}" class="uk-button uk-button-primary">Добавить</a>
+    </div>
 
-<!-- Main content -->
-<section class="content">
-
-  <!-- Default box -->
-  <div class="box">
-        <div class="box-header">
-          <h3 class="box-title">Листинг сущности</h3>
-        </div>
-        <!-- /.box-header -->
-        <div class="box-body">
-          <div class="form-group">
-            <a href="{{route('users.create')}}" class="btn btn-success">Добавить</a>
-          </div>
-          <table id="example1" class="table table-bordered table-striped">
-            <thead>
+    <table class="uk-table uk-table-striped uk-table-hover">
+        <thead>
             <tr>
-              <th>ID</th>
-              <th>Имя</th>
-              <th>E-mail</th>
-              <th>Аватар</th>
-              <th>Действия</th>
+                <th class="uk-table-shrink">ID</th>
+                <th class="uk-width-small">Аватар</th>
+                <th class="uk-width-auto">Имя</th>
+                <th class="uk-width-auto">E-mail</th>
+                <th class="uk-width-small">Действия</th>
             </tr>
-            </thead>
-            <tbody>
-            	@foreach($users as $user)
-                <tr>
-                  <td>{{$user->id}}</td>
-                  <td>{{$user->name}}</td>
-                  <td>{{$user->email}}</td>
-                  <td>
-	                <img src="{{$user->getAvatar()}}" alt="" class="img-responsive" width="150">
-	              </td>
-                  <td><a href="{{route('users.edit', $user->id)}}" class="fa fa-pencil"></a> 
-	              
-                   <!-- Форма для удаления категории -->
-                    {!! html()
-                        ->form()
-                        ->route('users.destroy', ['user' => $user->id])
-                        ->open() !!}
+        </thead>
+        <tbody>
+            @foreach($users as $user)
+            <tr>
+                <td>{{ $user->id }}</td>
+                <td>
+                    <img src="{{ $user->getAvatar() }}" alt="" class="uk-preserve-width uk-border-circle tm-avatar" height="40" width="40">
+                </td>
+                <td>{{ $user->name }}</td>
+                <td>{{ $user->email }}</td>
+                <td>
+                    <a href="{{ route('users.edit', $user->id) }}" uk-icon="icon: pencil"></a>
+                    <form action="{{ route('users.destroy', ['user' => $user->id]) }}" method="POST" style="display:inline">
+                        @csrf
                         @method('DELETE')
-                        <button type="submit" class="fa fa-remove delete" onclick="return confirm('Are You Sure?! You Fucking Bitch!!')"></button>
-                    {!! html()->form()->close() !!}
-                </tr>
-                @endforeach
-
-
-            </tfoot>
-          </table>
-        </div>
-        <!-- /.box-body -->
-      </div>
-  <!-- /.box -->
-
-</section>
-<!-- /.content -->
+                        <button type="submit" class="uk-icon-button" uk-icon="icon: trash" onclick="return confirm('Ты уверен?')"></button>
+                    </form>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
 </div>
-<!-- /.content-wrapper -->
 @endsection

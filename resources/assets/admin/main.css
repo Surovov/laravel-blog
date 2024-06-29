@@ -1,15 +1,19 @@
 /* Импорт CSS файлов */
-@import './bootstrap/css/bootstrap.min.css';
-@import './font-awesome/4.5.0/css/font-awesome.min.css';
+/*@import './font-awesome/4.5.0/css/font-awesome.min.css';
 @import './ionicons/2.0.1/css/ionicons.min.css';
 @import './plugins/iCheck/minimal/_all.css';
 @import './plugins/datepicker/datepicker3.css';
 @import './plugins/select2/select2.min.css';
 @import './plugins/datatables/dataTables.bootstrap.css';
+@import './bootstrap/css/bootstrap.min.css';
 
 
 @import './dist/css/AdminLTE.min.css';
-@import './dist/css/skins/_all-skins.min.css';
+@import './dist/css/skins/_all-skins.min.css';*/
+
+@import '/theme.css';*/
+
+
 
 /* Подключение шрифтов */
 @font-face {
@@ -23,3 +27,5 @@
     font-weight: normal;
     font-style: normal;
 }
+
+

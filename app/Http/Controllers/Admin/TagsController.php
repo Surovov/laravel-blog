@@ -32,7 +32,7 @@ class TagsController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'title' => 'required',
+            'title' => 'required|unique:tags,title',
         ]);
 
         if ($validator->fails()) {

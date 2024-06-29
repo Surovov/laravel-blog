@@ -23,7 +23,7 @@ export default defineConfig({
     ],
     base: '/blog/', // Укажите базовый URL, соответствующий вашей поддиректории
     build: {
-        outDir: 'public', // Укажите папку для выходных файлов
+        outDir: 'public/build', // Укажите папку для выходных файлов
         emptyOutDir: false, // Отключение очистки папки назначения перед сборкой
         rollupOptions: {
             input: {

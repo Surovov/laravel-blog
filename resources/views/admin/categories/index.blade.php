@@ -1,66 +1,37 @@
 @extends('admin.layout')
 
 @section('content')
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Blank page
-        <small>it all starts here</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Examples</a></li>
-        <li class="active">Blank page</li>
-      </ol>
-    </section>
+	<div class="">
+	  <div class="uk-flex uk-flex-between uk-flex-middle">
+	    <h3 class="uk-card-title">Categories List</h3>
+	    <a href="{{ route('categories.create') }}" class="uk-button uk-button-primary">Add</a>
+	  </div>
+	  
+	  <table class="uk-table uk-table-striped uk-table-divider uk-table-hover">
+	    <thead>
+	      <tr>
+	        <th class="uk-table-shrink">ID</th>
+	        <th class="uk-width-auto">Name</th>
+	        <th class="uk-width-small">Actions</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      @foreach($categories as $category)
+	        <tr>
+	          <td>{{ $category->id }}</td>
+	          <td>{{ $category->title }}</td>
+	          <td>
+	            <a href="{{ route('categories.edit', $category->id) }}" uk-icon="icon: pencil"></a>
+	            <form action="{{ route('categories.destroy', ['category' => $category->id]) }}" method="POST" style="display:inline">
+	              @csrf
+	              @method('DELETE')
+	              <button type="submit" class="uk-icon-button" uk-icon="icon: trash" onclick="return confirm('Are you sure you want to delete this item?')"></button>
+	            </form>
+	          </td>
+	        </tr>
+	      @endforeach
+	    </tbody>
+	  </table>
+	</div>
 
-    <!-- Main content -->
-    <section class="content">
-
-      <!-- Default box -->
-      <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Хуистинг сущности</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <div class="form-group">
-                <a href="{{route('categories.create')}}" class="btn btn-success">Добавить</a>
-              </div>
-              <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Название</th>
-                  <th>Действия</th>
-                </tr>
-                </thead>
-                <tbody>
-            	@foreach($categories as $category)
-                <tr>
-                  <td>{{$category->id}}</td>
-                  <td>{{$category->title}}</td>
-                  <td><a href="{{route('categories.edit', $category->id)}}" class="fa fa-pencil"></a> 
-
-                   <!-- Форма для удаления категории -->
-                    {!! html()
-                        ->form()
-                        ->route('categories.destroy', ['category' => $category->id])
-                        ->open() !!}
-                        @method('DELETE')
-                        <button type="submit" class="fa fa-remove delete" onclick="return confirm('Are You Sure?! You Fucking Bitch!!')"></button>
-                    {!! html()->form()->close() !!}
-                </tr>
-                @endforeach
-                </tfoot>
-              </table>
-            </div>
-            <!-- /.box-body -->
-          </div>
-      <!-- /.box -->
-
-    </section>
-    <!-- /.content -->
-  </div>
 @endsection

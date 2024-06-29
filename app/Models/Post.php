@@ -6,7 +6,10 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
-
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Str;
+// use Carbon\Carbon;
+// use \Storage;
 
 class Post extends Model
 {
@@ -18,16 +21,17 @@ class Post extends Model
 
 
 
-    protected $fillable = ['title','content']
+    protected $fillable = ['title','content','date'];
 
     public function category()
     {
-        return $this->hasOne(Category::class);
+        return $this->belongsTo(Category::class);
     }
+
 
     public function author()
     {
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
     public function tags()
     {
@@ -63,18 +67,24 @@ class Post extends Model
     }
     public function remove()
     {   
-        Storage::delete('uploads/' . $this->image);
+        $this->removeImage();
         $this->delete();
     }
     public function uploadImage($image)
     {
         if($image == null) { return; }
 
-        Storage::delete('uploads/' . $this->image);
-        $filename = str_random(10) . '.' . $image->extesion();
-        $image->saveAs('uploads', $filename);
+        $this->removeImage();
+        $filename = Str::random(10) . '.' . $image->extension();
+        $image->storeAs('uploads', $filename);
         $this->image = $filename;
         $this->save();
+    }
+    public function removeImage()
+    {
+       if ($this->image != null) {
+            Storage::delete('uploads/' . $this->image);
+        }
     }
 
     public function getImage()
@@ -82,7 +92,7 @@ class Post extends Model
         if($this->image == null) {
             return '/img/no-image.png';
         }
-        return '/uploads' . $this->image;
+        return '/uploads/' . $this->image;
     }
 
 
@@ -148,6 +158,21 @@ class Post extends Model
             $this->setFeatured();
         }
     }
+    public function getCategoryTitle()
+    {
+       return ($this->category !=null ) ? $this->category->title : 'Нет Категории';
+    }
+    // public function getTagsTitles()
+    // {
+    //    // code... 
+    // }
+
+    // public function setDateAttribute($value)
+    // {
+    //     Carbon::createFromFormat('d/m/y', $value)->format('Y-m-d');
+    //     dd($value);
+    // }
+    // мне ебаться не придется, так как type="data" уже изначально нормально хавает формат
 
 
 }

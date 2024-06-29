@@ -1,7 +1,271 @@
 {
+  "node_modules/icheck/skins/flat/aero.png": {
+    "file": "assets/aero.Cg-NX8LO.png",
+    "src": "node_modules/icheck/skins/flat/aero.png"
+  },
+  "node_modules/icheck/skins/flat/aero@2x.png": {
+    "file": "assets/aero@2x.tEaFupIH.png",
+    "src": "node_modules/icheck/skins/flat/aero@2x.png"
+  },
+  "node_modules/icheck/skins/flat/blue.png": {
+    "file": "assets/blue.BI6WxYvS.png",
+    "src": "node_modules/icheck/skins/flat/blue.png"
+  },
+  "node_modules/icheck/skins/flat/blue@2x.png": {
+    "file": "assets/blue@2x.DY1dgpjY.png",
+    "src": "node_modules/icheck/skins/flat/blue@2x.png"
+  },
+  "node_modules/icheck/skins/flat/flat.png": {
+    "file": "assets/flat.C141kWN1.png",
+    "src": "node_modules/icheck/skins/flat/flat.png"
+  },
+  "node_modules/icheck/skins/flat/flat@2x.png": {
+    "file": "assets/flat@2x.uNz0OM6L.png",
+    "src": "node_modules/icheck/skins/flat/flat@2x.png"
+  },
+  "node_modules/icheck/skins/flat/green.png": {
+    "file": "assets/green.B9LuYTjA.png",
+    "src": "node_modules/icheck/skins/flat/green.png"
+  },
+  "node_modules/icheck/skins/flat/green@2x.png": {
+    "file": "assets/green@2x.BsdSG3Dk.png",
+    "src": "node_modules/icheck/skins/flat/green@2x.png"
+  },
+  "node_modules/icheck/skins/flat/grey.png": {
+    "file": "assets/grey.DNW3HRJG.png",
+    "src": "node_modules/icheck/skins/flat/grey.png"
+  },
+  "node_modules/icheck/skins/flat/grey@2x.png": {
+    "file": "assets/grey@2x.DvTBgSiB.png",
+    "src": "node_modules/icheck/skins/flat/grey@2x.png"
+  },
+  "node_modules/icheck/skins/flat/orange.png": {
+    "file": "assets/orange.BhflUjv6.png",
+    "src": "node_modules/icheck/skins/flat/orange.png"
+  },
+  "node_modules/icheck/skins/flat/orange@2x.png": {
+    "file": "assets/orange@2x.C3HK_evs.png",
+    "src": "node_modules/icheck/skins/flat/orange@2x.png"
+  },
+  "node_modules/icheck/skins/flat/pink.png": {
+    "file": "assets/pink.CqOXJ5UJ.png",
+    "src": "node_modules/icheck/skins/flat/pink.png"
+  },
+  "node_modules/icheck/skins/flat/pink@2x.png": {
+    "file": "assets/pink@2x.C4B8BHIu.png",
+    "src": "node_modules/icheck/skins/flat/pink@2x.png"
+  },
+  "node_modules/icheck/skins/flat/purple.png": {
+    "file": "assets/purple.DpcFwp-F.png",
+    "src": "node_modules/icheck/skins/flat/purple.png"
+  },
+  "node_modules/icheck/skins/flat/purple@2x.png": {
+    "file": "assets/purple@2x.BLdwwPC2.png",
+    "src": "node_modules/icheck/skins/flat/purple@2x.png"
+  },
+  "node_modules/icheck/skins/flat/red.png": {
+    "file": "assets/red.CUwpx9uG.png",
+    "src": "node_modules/icheck/skins/flat/red.png"
+  },
+  "node_modules/icheck/skins/flat/red@2x.png": {
+    "file": "assets/red@2x.R7uQYHf7.png",
+    "src": "node_modules/icheck/skins/flat/red@2x.png"
+  },
+  "node_modules/icheck/skins/flat/yellow.png": {
+    "file": "assets/yellow.sF2ak6bf.png",
+    "src": "node_modules/icheck/skins/flat/yellow.png"
+  },
+  "node_modules/icheck/skins/flat/yellow@2x.png": {
+    "file": "assets/yellow@2x.B64PKHY-.png",
+    "src": "node_modules/icheck/skins/flat/yellow@2x.png"
+  },
+  "node_modules/icheck/skins/futurico/futurico.png": {
+    "file": "assets/futurico.CTVqu9jM.png",
+    "src": "node_modules/icheck/skins/futurico/futurico.png"
+  },
+  "node_modules/icheck/skins/futurico/futurico@2x.png": {
+    "file": "assets/futurico@2x.DwyD9J3S.png",
+    "src": "node_modules/icheck/skins/futurico/futurico@2x.png"
+  },
+  "node_modules/icheck/skins/line/line.png": {
+    "file": "assets/line.2R1HVgBW.png",
+    "src": "node_modules/icheck/skins/line/line.png"
+  },
+  "node_modules/icheck/skins/line/line@2x.png": {
+    "file": "assets/line@2x.DjJMtPQV.png",
+    "src": "node_modules/icheck/skins/line/line@2x.png"
+  },
+  "node_modules/icheck/skins/minimal/aero.png": {
+    "file": "assets/aero.BKhjgkGe.png",
+    "src": "resources/assets/admin/plugins/iCheck/minimal/aero.png"
+  },
+  "node_modules/icheck/skins/minimal/aero@2x.png": {
+    "file": "assets/aero@2x.DG4APloi.png",
+    "src": "node_modules/icheck/skins/minimal/aero@2x.png"
+  },
+  "node_modules/icheck/skins/minimal/blue.png": {
+    "file": "assets/blue.D-76G-8e.png",
+    "src": "resources/assets/admin/plugins/iCheck/minimal/blue.png"
+  },
+  "node_modules/icheck/skins/minimal/blue@2x.png": {
+    "file": "assets/blue@2x.D8EKqCfK.png",
+    "src": "node_modules/icheck/skins/minimal/blue@2x.png"
+  },
+  "node_modules/icheck/skins/minimal/green.png": {
+    "file": "assets/green.k6YmPwDl.png",
+    "src": "resources/assets/admin/plugins/iCheck/minimal/green.png"
+  },
+  "node_modules/icheck/skins/minimal/green@2x.png": {
+    "file": "assets/green@2x.BZEPPN2t.png",
+    "src": "node_modules/icheck/skins/minimal/green@2x.png"
+  },
+  "node_modules/icheck/skins/minimal/grey.png": {
+    "file": "assets/grey.nVHjPV8f.png",
+    "src": "resources/assets/admin/plugins/iCheck/minimal/grey.png"
+  },
+  "node_modules/icheck/skins/minimal/grey@2x.png": {
+    "file": "assets/grey@2x.CCEnvMYJ.png",
+    "src": "node_modules/icheck/skins/minimal/grey@2x.png"
+  },
+  "node_modules/icheck/skins/minimal/minimal.png": {
+    "file": "assets/minimal.BWnBbjTp.png",
+    "src": "node_modules/icheck/skins/minimal/minimal.png"
+  },
+  "node_modules/icheck/skins/minimal/minimal@2x.png": {
+    "file": "assets/minimal@2x.BOS0XCYL.png",
+    "src": "node_modules/icheck/skins/minimal/minimal@2x.png"
+  },
+  "node_modules/icheck/skins/minimal/orange.png": {
+    "file": "assets/orange.C2u4p2R-.png",
+    "src": "resources/assets/admin/plugins/iCheck/minimal/orange.png"
+  },
+  "node_modules/icheck/skins/minimal/orange@2x.png": {
+    "file": "assets/orange@2x.B95gp3eR.png",
+    "src": "node_modules/icheck/skins/minimal/orange@2x.png"
+  },
+  "node_modules/icheck/skins/minimal/pink.png": {
+    "file": "assets/pink.C9e0Y2o6.png",
+    "src": "resources/assets/admin/plugins/iCheck/minimal/pink.png"
+  },
+  "node_modules/icheck/skins/minimal/pink@2x.png": {
+    "file": "assets/pink@2x.Ip9v99RZ.png",
+    "src": "node_modules/icheck/skins/minimal/pink@2x.png"
+  },
+  "node_modules/icheck/skins/minimal/purple.png": {
+    "file": "assets/purple.BgEwAWpv.png",
+    "src": "resources/assets/admin/plugins/iCheck/minimal/purple.png"
+  },
+  "node_modules/icheck/skins/minimal/purple@2x.png": {
+    "file": "assets/purple@2x.DznzV7Zw.png",
+    "src": "node_modules/icheck/skins/minimal/purple@2x.png"
+  },
+  "node_modules/icheck/skins/minimal/red.png": {
+    "file": "assets/red.fUPLbBr6.png",
+    "src": "resources/assets/admin/plugins/iCheck/minimal/red.png"
+  },
+  "node_modules/icheck/skins/minimal/red@2x.png": {
+    "file": "assets/red@2x.QX8VRDCv.png",
+    "src": "node_modules/icheck/skins/minimal/red@2x.png"
+  },
+  "node_modules/icheck/skins/minimal/yellow.png": {
+    "file": "assets/yellow.D_oaVcOQ.png",
+    "src": "resources/assets/admin/plugins/iCheck/minimal/yellow.png"
+  },
+  "node_modules/icheck/skins/minimal/yellow@2x.png": {
+    "file": "assets/yellow@2x.CxR2ESzz.png",
+    "src": "node_modules/icheck/skins/minimal/yellow@2x.png"
+  },
+  "node_modules/icheck/skins/polaris/polaris.png": {
+    "file": "assets/polaris.Be1hFusy.png",
+    "src": "node_modules/icheck/skins/polaris/polaris.png"
+  },
+  "node_modules/icheck/skins/polaris/polaris@2x.png": {
+    "file": "assets/polaris@2x.rXizcOA9.png",
+    "src": "node_modules/icheck/skins/polaris/polaris@2x.png"
+  },
+  "node_modules/icheck/skins/square/aero.png": {
+    "file": "assets/aero.BMKryh0q.png",
+    "src": "node_modules/icheck/skins/square/aero.png"
+  },
+  "node_modules/icheck/skins/square/aero@2x.png": {
+    "file": "assets/aero@2x.BZT5AtA0.png",
+    "src": "node_modules/icheck/skins/square/aero@2x.png"
+  },
+  "node_modules/icheck/skins/square/blue.png": {
+    "file": "assets/blue.CoZTdtMk.png",
+    "src": "node_modules/icheck/skins/square/blue.png"
+  },
+  "node_modules/icheck/skins/square/blue@2x.png": {
+    "file": "assets/blue@2x.sjEZonJr.png",
+    "src": "node_modules/icheck/skins/square/blue@2x.png"
+  },
+  "node_modules/icheck/skins/square/green.png": {
+    "file": "assets/green.BOAKhejq.png",
+    "src": "node_modules/icheck/skins/square/green.png"
+  },
+  "node_modules/icheck/skins/square/green@2x.png": {
+    "file": "assets/green@2x.CnBJuHjT.png",
+    "src": "node_modules/icheck/skins/square/green@2x.png"
+  },
+  "node_modules/icheck/skins/square/grey.png": {
+    "file": "assets/grey.D_ENFu37.png",
+    "src": "node_modules/icheck/skins/square/grey.png"
+  },
+  "node_modules/icheck/skins/square/grey@2x.png": {
+    "file": "assets/grey@2x.DURCKouh.png",
+    "src": "node_modules/icheck/skins/square/grey@2x.png"
+  },
+  "node_modules/icheck/skins/square/orange.png": {
+    "file": "assets/orange.YkAirqAX.png",
+    "src": "node_modules/icheck/skins/square/orange.png"
+  },
+  "node_modules/icheck/skins/square/orange@2x.png": {
+    "file": "assets/orange@2x.xftChh_k.png",
+    "src": "node_modules/icheck/skins/square/orange@2x.png"
+  },
+  "node_modules/icheck/skins/square/pink.png": {
+    "file": "assets/pink.7EM1k8F0.png",
+    "src": "node_modules/icheck/skins/square/pink.png"
+  },
+  "node_modules/icheck/skins/square/pink@2x.png": {
+    "file": "assets/pink@2x.CBPxWtrs.png",
+    "src": "node_modules/icheck/skins/square/pink@2x.png"
+  },
+  "node_modules/icheck/skins/square/purple.png": {
+    "file": "assets/purple.B3HGXOLP.png",
+    "src": "node_modules/icheck/skins/square/purple.png"
+  },
+  "node_modules/icheck/skins/square/purple@2x.png": {
+    "file": "assets/purple@2x.C_GqgWHh.png",
+    "src": "node_modules/icheck/skins/square/purple@2x.png"
+  },
+  "node_modules/icheck/skins/square/red.png": {
+    "file": "assets/red.D0ccRuDq.png",
+    "src": "node_modules/icheck/skins/square/red.png"
+  },
+  "node_modules/icheck/skins/square/red@2x.png": {
+    "file": "assets/red@2x.CAUsdVnR.png",
+    "src": "node_modules/icheck/skins/square/red@2x.png"
+  },
+  "node_modules/icheck/skins/square/square.png": {
+    "file": "assets/square.xN_PWNuG.png",
+    "src": "node_modules/icheck/skins/square/square.png"
+  },
+  "node_modules/icheck/skins/square/square@2x.png": {
+    "file": "assets/square@2x.DE1B8Ynx.png",
+    "src": "node_modules/icheck/skins/square/square@2x.png"
+  },
+  "node_modules/icheck/skins/square/yellow.png": {
+    "file": "assets/yellow.CRQ99HId.png",
+    "src": "node_modules/icheck/skins/square/yellow.png"
+  },
+  "node_modules/icheck/skins/square/yellow@2x.png": {
+    "file": "assets/yellow@2x.B3mAyI75.png",
+    "src": "node_modules/icheck/skins/square/yellow@2x.png"
+  },
   "resources/assets/admin/bootstrap/fonts/glyphicons-halflings-regular.eot": {
     "file": "assets/glyphicons-halflings-regular.BUJKDMgK.eot",
-    "src": "resources/assets/admin/bootstrap/fonts/glyphicons-halflings-regular.eot"
+    "src": "resources/assets/admin/bootstrap/fonts/glyphicons-halflings-regulard41d.eot"
   },
   "resources/assets/admin/bootstrap/fonts/glyphicons-halflings-regular.html": {
     "file": "assets/glyphicons-halflings-regular.DzqM6ju8.html",
@@ -21,7 +285,7 @@
   },
   "resources/assets/admin/bootstrap/fonts/glyphicons-halflings-regulard41d.eot": {
     "file": "assets/glyphicons-halflings-regular.BUJKDMgK.eot",
-    "src": "resources/assets/admin/bootstrap/fonts/glyphicons-halflings-regular.eot"
+    "src": "resources/assets/admin/bootstrap/fonts/glyphicons-halflings-regulard41d.eot"
   },
   "resources/assets/admin/dist/fonts/fontawesome-webfont.eot": {
     "file": "assets/fontawesome-webfont.G5YE5S7X.eot",
@@ -53,12 +317,80 @@
     "isEntry": true
   },
   "resources/assets/admin/main.js": {
-    "file": "assets/main-_oBLj1Th.js",
+    "file": "assets/main-C754ryzc.js",
     "name": "main",
     "src": "resources/assets/admin/main.js",
     "isEntry": true,
     "css": [
-      "assets/main.BjaYUEdX.css"
+      "assets/main.D9Bzkgsg.css"
+    ],
+    "assets": [
+      "assets/minimal.BWnBbjTp.png",
+      "assets/minimal@2x.BOS0XCYL.png",
+      "assets/red.fUPLbBr6.png",
+      "assets/red@2x.QX8VRDCv.png",
+      "assets/green.k6YmPwDl.png",
+      "assets/green@2x.BZEPPN2t.png",
+      "assets/blue.D-76G-8e.png",
+      "assets/blue@2x.D8EKqCfK.png",
+      "assets/aero.BKhjgkGe.png",
+      "assets/aero@2x.DG4APloi.png",
+      "assets/grey.nVHjPV8f.png",
+      "assets/grey@2x.CCEnvMYJ.png",
+      "assets/orange.C2u4p2R-.png",
+      "assets/orange@2x.B95gp3eR.png",
+      "assets/yellow.D_oaVcOQ.png",
+      "assets/yellow@2x.CxR2ESzz.png",
+      "assets/pink.C9e0Y2o6.png",
+      "assets/pink@2x.Ip9v99RZ.png",
+      "assets/purple.BgEwAWpv.png",
+      "assets/purple@2x.DznzV7Zw.png",
+      "assets/square.xN_PWNuG.png",
+      "assets/square@2x.DE1B8Ynx.png",
+      "assets/red.D0ccRuDq.png",
+      "assets/red@2x.CAUsdVnR.png",
+      "assets/green.BOAKhejq.png",
+      "assets/green@2x.CnBJuHjT.png",
+      "assets/blue.CoZTdtMk.png",
+      "assets/blue@2x.sjEZonJr.png",
+      "assets/aero.BMKryh0q.png",
+      "assets/aero@2x.BZT5AtA0.png",
+      "assets/grey.D_ENFu37.png",
+      "assets/grey@2x.DURCKouh.png",
+      "assets/orange.YkAirqAX.png",
+      "assets/orange@2x.xftChh_k.png",
+      "assets/yellow.CRQ99HId.png",
+      "assets/yellow@2x.B3mAyI75.png",
+      "assets/pink.7EM1k8F0.png",
+      "assets/pink@2x.CBPxWtrs.png",
+      "assets/purple.B3HGXOLP.png",
+      "assets/purple@2x.C_GqgWHh.png",
+      "assets/flat.C141kWN1.png",
+      "assets/flat@2x.uNz0OM6L.png",
+      "assets/red.CUwpx9uG.png",
+      "assets/red@2x.R7uQYHf7.png",
+      "assets/green.B9LuYTjA.png",
+      "assets/green@2x.BsdSG3Dk.png",
+      "assets/blue.BI6WxYvS.png",
+      "assets/blue@2x.DY1dgpjY.png",
+      "assets/aero.Cg-NX8LO.png",
+      "assets/aero@2x.tEaFupIH.png",
+      "assets/grey.DNW3HRJG.png",
+      "assets/grey@2x.DvTBgSiB.png",
+      "assets/orange.BhflUjv6.png",
+      "assets/orange@2x.C3HK_evs.png",
+      "assets/yellow.sF2ak6bf.png",
+      "assets/yellow@2x.B64PKHY-.png",
+      "assets/pink.CqOXJ5UJ.png",
+      "assets/pink@2x.C4B8BHIu.png",
+      "assets/purple.DpcFwp-F.png",
+      "assets/purple@2x.BLdwwPC2.png",
+      "assets/line.2R1HVgBW.png",
+      "assets/line@2x.DjJMtPQV.png",
+      "assets/polaris.Be1hFusy.png",
+      "assets/polaris@2x.rXizcOA9.png",
+      "assets/futurico.CTVqu9jM.png",
+      "assets/futurico@2x.DwyD9J3S.png"
     ]
   },
   "resources/assets/admin/plugins/iCheck/minimal/aero.png": {

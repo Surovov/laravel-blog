@@ -1,69 +1,97 @@
 @extends('admin.layout')
 
 @section('content')
+{!! html()
+    ->form()
+    ->route('users.update', ['user' => $user->id])
+    ->attribute('enctype', 'multipart/form-data')
+    ->open() !!}
+@method('PUT')
 
-<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
-<!-- Content Header (Page header) -->
-<section class="content-header">
-  <h1>
-    Редактировать пользователя
-    <small>приятные слова..</small>
-  </h1>
-</section>
+<h3 class="uk-heading-bullet">Редактируем пользователя</h3>
 
-<!-- Main content -->
-<section class="content">
-
-  <!-- Default box -->
-  <div class="box">
-    {!! html()
-        ->form()
-        ->route('users.update', $user->id)
-        ->attribute('enctype', 'multipart/form-data')
-        ->open() !!}
-        @method('PUT')
-    <div class="box-header with-border">
-      <h3 class="box-title">Редактируем пользователя</h3>
-        @include('admin.errors')
-
-    </div>
-    <div class="box-body">
-      <div class="col-md-6">
-        <div class="form-group">
-            {!! html()->label('Имя', 'name') !!}
-            {!! html()->text('name', $user->name)->attribute('class', 'form-control') !!}
-        </div>
-        <div class="form-group">
-            {!! html()->label('E-mail', 'email') !!}
-            {!! html()->email('email', $user->email)->attribute('class', 'form-control') !!}
-         </div>
-        <div class="form-group">
-            {!! html()->label('Пароль', 'password') !!}
-            {!! html()->password('password')->attribute('class', 'form-control') !!}
-        </div>
-        <div class="form-group">
-        	<img src="{{$user->getAvatar()}}" width="200px;"><br>
-          {!! html()->label('Аватар', 'avatar') !!}
-          {!! html()->file('avatar')->attribute('class', 'form-control') !!}
-          <p class="help-block">Какое-нибудь уведомление о форматах..</p>
-        </div>
-      </div>
-    </div>
-    <!-- /.box-body -->
-    <div class="box-footer">
-        <a href="{{ route('users.index') }}" class="btn btn-default">Назад</a>
-        {!! html()->submit('Сохранить')->attribute('class', 'btn btn-success pull-right') !!}
-    </div>
-    <!-- /.box-footer-->
-    {!! html()->form()->close() !!}
-
-  </div>
-  <!-- /.box -->
-
-</section>
-<!-- /.content -->
+<div class="uk-margin">
+    {!! html()->label('Имя', 'name')->attribute('class', 'uk-form-label') !!}
+    {!! html()->text('name', $user->name)->attribute('class', 'uk-input') !!}
 </div>
-<!-- /.content-wrapper -->
 
+<div class="uk-margin">
+    {!! html()->label('E-mail', 'email')->attribute('class', 'uk-form-label') !!}
+    {!! html()->email('email', $user->email)->attribute('class', 'uk-input') !!}
+</div>
+
+<div class="uk-margin">
+    {!! html()->label('Пароль', 'password')->attribute('class', 'uk-form-label') !!}
+    {!! html()->password('password')->attribute('class', 'uk-input') !!}
+</div>
+
+<div class="uk-margin">
+    {!! html()->label('Актуальный аватар', 'current_avatar')->attribute('class', 'uk-form-label') !!}
+    <div>
+        <img src="{{ $user->getAvatar() }}" alt="Current Avatar" class="uk-border-circle" width="100">
+    </div>
+</div>
+<div class="uk-margin" uk-margin>
+    <img src="{{$user->getAvatar()}}" width="200px;"><br>
+    {!! html()->label('Аватар', 'avatar')->attribute('class', 'uk-form-label') !!}
+    <div uk-form-custom="target: true">
+        <input type="file" name="avatar" aria-label="Custom controls">
+        <input class="uk-input uk-form-width-medium" type="text" placeholder="Выберите файл" aria-label="Custom controls" disabled>
+    </div>
+</div>
+
+<div class="uk-margin uk-text-right">
+    <a href="{{ route('users.index') }}" class="uk-button uk-button-default">Назад</a>
+    {!! html()->submit('Сохранить')->attribute('class', 'uk-button uk-button-primary') !!}
+</div>
+
+{!! html()->form()->close() !!}
+
+<script>
+    var bar = document.getElementById('js-progressbar');
+
+    UIkit.upload('.js-upload', {
+        url: '', // Укажите URL для загрузки
+        multiple: true,
+
+        beforeSend: function () {
+            console.log('beforeSend', arguments);
+        },
+        beforeAll: function () {
+            console.log('beforeAll', arguments);
+        },
+        load: function () {
+            console.log('load', arguments);
+        },
+        error: function () {
+            console.log('error', arguments);
+        },
+        complete: function () {
+            console.log('complete', arguments);
+        },
+        loadStart: function (e) {
+            console.log('loadStart', arguments);
+            bar.removeAttribute('hidden');
+            bar.max = e.total;
+            bar.value = e.loaded;
+        },
+        progress: function (e) {
+            console.log('progress', arguments);
+            bar.max = e.total;
+            bar.value = e.loaded;
+        },
+        loadEnd: function (e) {
+            console.log('loadEnd', arguments);
+            bar.max = e.total;
+            bar.value = e.loaded;
+        },
+        completeAll: function () {
+            console.log('completeAll', arguments);
+            setTimeout(function () {
+                bar.setAttribute('hidden', 'hidden');
+            }, 1000);
+            alert('Загрузка завершена');
+        }
+    });
+</script>
 @endsection

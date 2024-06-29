@@ -1,52 +1,24 @@
 @extends('admin.layout')
 
 @section('content')
-<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <h1>
-            Редактировать tag
-            <small>приятные слова..</small>
-        </h1>
-    </section>
+{!! html()
+    ->form()
+    ->route('tags.update', ['tag' => $tag->id])
+    ->attribute('enctype', 'multipart/form-data')
+    ->open() !!}
+@method('PUT')
 
-    <!-- Main content -->
-    <section class="content">
+<h3 class="uk-heading-bullet">Редактируем TAG</h3>
 
-        <!-- Default box -->
-        <div class="box">
-            {!! html()
-                ->form()
-                ->route('tags.update', ['tag' => $tag->id])
-                ->attribute('enctype', 'multipart/form-data')
-                ->open() !!}
-            @method('PUT')
-            <div class="box-header with-border">
-                <h3 class="box-title">Редактируем TAG</h3>
-
-                @include('admin.errors')
-            </div>
-            <div class="box-body">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        {!! html()->label('Название Категории', 'title') !!}
-                        {!! html()->text('title', $tag->title)->attribute('class', 'form-control') !!}
-                    </div>
-                </div>
-            </div>
-            <!-- /.box-body -->
-            <div class="box-footer">
-                <a href="{{route('tags.index')}}" class="btn btn-default">Назад</a>
-                {!! html()->submit('Сохранить')->attribute('class', 'btn btn-success pull-right') !!}
-            </div>
-            <!-- /.box-footer-->
-            {!! html()->form()->close() !!}
-        </div>
-        <!-- /.box -->
-
-    </section>
-    <!-- /.content -->
+<div class="uk-margin">
+    {!! html()->label('Название TAG', 'title')->attribute('class', 'uk-form-label') !!}
+    {!! html()->text('title', $tag->title)->attribute('class', 'uk-input') !!}
 </div>
-<!-- /.content-wrapper -->
+
+<div class="uk-margin uk-text-right">
+    <a href="{{ route('tags.index') }}" class="uk-button uk-button-default">Назад</a>
+    {!! html()->submit('Сохранить')->attribute('class', 'uk-button uk-button-primary') !!}
+</div>
+
+{!! html()->form()->close() !!}
 @endsection

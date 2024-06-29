@@ -1,55 +1,23 @@
 @extends('admin.layout')
 
 @section('content')
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Добавить тег
-        <small>неприятные слова..</small>
-      </h1>
-    </section>
+{!! html()
+    ->form()
+    ->route('tags.store')
+    ->attribute('enctype', 'multipart/form-data')
+    ->open() !!}
 
-    <!-- Main content -->
-    <section class="content">
+<h3 class="uk-heading-bullet">Добавляем ТЕГ</h3>
 
-      <!-- Default box -->
-      <div class="box">
-      	{!! html()
-        ->form()
-        ->route('tags.store')
-        ->attribute('enctype', 'multipart/form-data')
-        ->open() !!}
-        <div class="box-header with-border">
-          <h3 class="box-title">Добавляем ТЕГ</h3>
+<div class="uk-margin">
+    {!! html()->label('Название TAG', 'title')->attribute('class', 'uk-form-label') !!}
+    {!! html()->text('title')->attribute('class', 'uk-input') !!}
+</div>
 
-          @include('admin.errors')
+<div class="uk-margin uk-text-right">
+    <a href="{{ route('tags.index') }}" class="uk-button uk-button-default">Назад</a>
+    {!! html()->submit('Добавить')->attribute('class', 'uk-button uk-button-primary') !!}
+</div>
 
-
-        </div>
-        <div class="box-body">
-          <div class="col-md-6">
-            <div class="form-group">
-	        	{!! html()->label('Название TAG', 'title') !!}
-        		{!! html()->text('title')->attribute('class', 'form-control') !!}
-	        	
-            </div>
-        </div>
-      </div>
-        <!-- /.box-body -->
-        <div class="box-footer">
-		<a href="{{route('tags.index')}}" class="btn btn-default">Назад</a>
-        {!! html()->submit('Добавить')->attribute('class', 'btn btn-success pull-right') !!}
-          
-        </div>
-        <!-- /.box-footer-->
-        {!! html()->form()->close() !!}
-      </div>
-      <!-- /.box -->
-
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
+{!! html()->form()->close() !!}
 @endsection

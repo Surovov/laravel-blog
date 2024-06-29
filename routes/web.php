@@ -13,5 +13,5 @@ Route::group(['prefix' => 'admin', 'namespace' => 'App\Http\Controllers\Admin'],
     Route::resource('/categories', CategoriesController::class)->except(['show']);
     Route::resource('/tags', TagsController::class)->except(['show']);
     Route::resource('/users', UsersController::class)->except(['show']);
-
+    Route::resource('/posts', PostsController::class)->except(['show']);
 });
