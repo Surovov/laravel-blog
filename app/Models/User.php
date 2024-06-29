@@ -6,6 +6,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Str;
+use \Storage;
 
 class User extends Authenticatable
 {
@@ -21,8 +23,8 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'password',
     ];
+
 
     /**
      * The attributes that should be hidden for serialization.
@@ -60,43 +62,60 @@ class User extends Authenticatable
     {
         $user = new static;
         $user->fill($fields);
-        $user->password = bcrypt($fields['password'])
+        $user->password = bcrypt($fields['password']);
         $user->save();
 
         return $user;
     }
+
     public function edit($fields)
     {
-        $this->fill($fields);
-        $this->password = bcrypt($fields['password'])
+        $this->fill($fields);        
         $this->save();
     }
+
+    public function genPass($password)
+    {
+        if ($password != null) {
+            $this->password = bcrypt($password);
+            $this->save();
+        }
+    }
+
+
     public function remove()
     {
-        Storage::delete('uploads/' . $this->image);
+        $this->removeAvatar();
         $this->delete();
     }
 
-
     public function uploadAvatar($image)
     {
-        if($image == null) { return; }
-
-        Storage::delete('uploads/' . $this->image);
-        $filename = str_random(10) . '.' . $image->extesion();
-        $image->saveAs('uploads', $filename);
-        $this->image = $filename;
+        if ($image == null) {
+            return;
+        }
+        $this->removeAvatar();
+        $filename = Str::random(10) . '.' . $image->extension();
+        $image->storeAs('uploads', $filename);
+        $this->avatar = $filename;
         $this->save();
     }
 
     public function getAvatar()
     {   
-        if($this->image == null) {
-            return '/img/no-user-image.png';
+        if($this->avatar == null) {
+            return '/img/no-image.png';
         }
-        return '/uploads' . $this->image;
+        return '/uploads/' . $this->avatar;
+    }
+    public function removeAvatar()
+    {
+       if ($this->avatar != null) {
+            Storage::delete('uploads/' . $this->avatar);
+        }
     }
 
+    
     public function makeAdmin()
     {
         $this->is_admin = 1;
