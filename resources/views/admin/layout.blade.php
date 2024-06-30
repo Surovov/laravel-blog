@@ -73,7 +73,7 @@
       <p>&copy; 2024 Task Manager. Все права защищены.</p>
   </footer>
 
-  <!-- @vite('resources/assets/admin/main.js') -->
+  @vite('resources/assets/admin/editor.js')
   
 </body>
 </html>

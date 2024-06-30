@@ -64,20 +64,22 @@ class PostsController extends Controller
         return redirect()->route('posts.index');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
     {
-        //
+        $post = Post::find($id);
+        $tags = Tag::pluck('title', 'id')->all();
+        $categories = Category::pluck('title', 'id')->all();
+
+        return view('admin.posts.edit', compact(
+            'categories',
+            'tags',
+            'post',
+        ));
+        return view('admin.posts.edit', ['post'=>$post]);
     }
 
     /**
@@ -85,7 +87,28 @@ class PostsController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $post = Post::findOrFail($id);
+        $validator = Validator::make($request->all(), [
+            'title' => 'required',
+            'content' => 'required',
+            'date' => 'required',
+            'image' => 'nullable|image',
+        ]);
+        if ($validator->fails()) {
+            return redirect()->route('posts.create')
+                ->withErrors($validator)
+                ->withInput();
+        }
+        $post->update($request->all());
+        $post->uploadImage($request->file('image'));
+
+        $post->setCategory($request->get('category_id'));
+        $post->setTags($request->get('tags'));
+
+        $post->toggleStatus($request->get('status'));
+        $post->toggleFeatured($request->get('is_featured'));
+
+        return redirect()->route('posts.index');
     }
 
     /**
@@ -93,6 +116,11 @@ class PostsController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Post::find($id)->remove();
+        return redirect()->route('posts.index');
     }
+
+
+
+
 }

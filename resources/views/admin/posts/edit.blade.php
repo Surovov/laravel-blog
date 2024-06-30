@@ -16,23 +16,10 @@
 </div>
 
 
-<div class="uk-margin">
-    {!! html()->label('Лицевая картинка', 'image')->attribute('class', 'uk-form-label') !!}
-    <div class="js-upload uk-placeholder uk-text-center">
-        <span uk-icon="icon: cloud-upload"></span>
-        <span class="uk-text-middle">Прикрепите файлы, перетащив их сюда, или</span>
-        <div uk-form-custom>
-            {!! html()->file('image')->multiple() !!}
-            <span class="uk-link">выберите файл</span>
-        </div>
-    </div>
-
-    <progress id="js-progressbar" class="uk-progress" value="0" max="100" hidden></progress>
-</div>
 
 <div class="uk-margin" uk-margin>
-    <img src="{{$user->getImage()}}" width="200px;"><br>
-    {!! html()->label('Аватар', 'image')->attribute('class', 'uk-form-label') !!}
+    <img src="{{$post->getImage()}}" width="200px;"><br>
+    {!! html()->label('Картинка', 'image')->attribute('class', 'uk-form-label') !!}
     <div uk-form-custom="target: true">
         <input type="file" name="image" aria-label="Custom controls">
         <input class="uk-input uk-form-width-medium" type="text" placeholder="Выберите файл" aria-label="Custom controls" disabled>
@@ -79,7 +66,7 @@
 
 <div class="uk-margin">
     {!! html()->label('Полный текст', 'content')->attribute('class', 'uk-form-label') !!}
-    {!! html()->textarea('content', $post->content)->class('uk-textarea')->rows(10) !!}
+    {!! html()->textarea('content', $post->content)->class('uk-textarea trix-content')->rows(10) !!}
 </div>
 
 <div class="uk-margin uk-text-right">

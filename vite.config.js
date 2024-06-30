@@ -8,7 +8,7 @@ export default defineConfig({
         laravel({
             input: [
                 'resources/assets/admin/main.js',
-                'resources/assets/admin/main.css',
+                // 'resources/assets/admin/main.css',
             ],
             refresh: true,
         }),

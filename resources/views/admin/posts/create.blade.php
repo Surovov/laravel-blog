@@ -65,7 +65,7 @@
 
 <div class="uk-margin">
     {!! html()->label('Полный текст', 'content')->attribute('class', 'uk-form-label') !!}
-    {!! html()->textarea('content')->class('uk-textarea')->rows(10)->value(old('content')) !!}
+    {!! html()->textarea('content')->class('uk-textarea trix-content')->rows(10)->value(old('content')) !!}
 </div>
 
 <div class="uk-margin uk-text-right">
