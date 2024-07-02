@@ -1,34 +1,37 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
-import { resolve } from 'path';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
+import { resolve } from 'path';
 
 export default defineConfig({
     plugins: [
         laravel({
             input: [
-                'resources/assets/admin/main.js',
-                // 'resources/assets/admin/main.css',
+                'resources/assets/front/js/main.js',
+                'resources/assets/front/css/main.css',
             ],
             refresh: true,
         }),
         viteStaticCopy({
             targets: [
                 {
-                    src: 'resources/assets/admin/dist/img/*',
-                    dest: 'img'
+                    src: 'resources/assets/front/images/*',
+                    dest: 'images'
+                },
+                {
+                    src: 'resources/assets/front/fonts/*',
+                    dest: 'fonts'
                 }
             ]
         })
     ],
-    base: '/blog/', // Укажите базовый URL, соответствующий вашей поддиректории
     build: {
-        outDir: 'public/build', // Укажите папку для выходных файлов
+        outDir: 'public/assets', // Укажите папку для выходных файлов
         emptyOutDir: false, // Отключение очистки папки назначения перед сборкой
         rollupOptions: {
             input: {
-                main: resolve(__dirname, 'resources/assets/admin/main.js'),
-                style: resolve(__dirname, 'resources/assets/admin/main.css'),
+                main_js: resolve(__dirname, 'resources/assets/front/js/main.js'),
+                main_css: resolve(__dirname, 'resources/assets/front/css/main.css'),
             },
             output: {
                 assetFileNames: 'assets/[name].[hash][extname]',

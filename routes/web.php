@@ -4,9 +4,16 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoriesController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+use App\Http\Controllers\HomeController;
+
+Route::get('/', [HomeController::class, 'index']);
+
+
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::group(['prefix' => 'admin', 'namespace' => 'App\Http\Controllers\Admin'], function () {
     Route::get('/', [DashboardController::class, 'index']);

@@ -18,7 +18,6 @@ class Category extends Model
     {
         return $this->hasMany(Post::class);
     }
-
     public function sluggable(): array
     {
         return [
@@ -27,4 +26,19 @@ class Category extends Model
             ]
         ];
     }
+
+    public static function add($fields)
+    {
+        $category = new static; // Создается новый экземпляр модели Категории
+        $category->fill($fields); // Массово присваиваются значения атрибутов из $fields
+        $category->save(); // Сохраняется новый пост в базе данных
+        return $category; // Возвращается созданная категория
+    }
+
+    public function edit($feilds)
+    {
+        $this->fill($fields);
+        $this->save();
+    }
+
 }

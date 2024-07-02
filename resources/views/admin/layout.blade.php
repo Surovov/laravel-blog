@@ -60,11 +60,9 @@
   </div>
   @include('admin.sidebar')
   <div id="tm-main" class="tm-main uk-section uk-section-default">
-    <div class="uk-container uk-position-relative">
-      <div class="uk-padding-large uk-padding-remove-vertical  ">
+    <div class="uk-container uk-container-small uk-position-relative">
       @include('admin.errors')
       @yield('content')
-      </div>
     </div>
   </div>
 

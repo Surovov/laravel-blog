@@ -41,9 +41,10 @@ class CategoriesController extends Controller
     }
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'title' => 'required|string|max:255',
+        $validator = Validator::make($request->all(), [
+            'title' => 'required',
         ]);
+
         if ($validator->fails()) {
             return redirect()->route('categories.edit')
                 ->withErrors($validator)

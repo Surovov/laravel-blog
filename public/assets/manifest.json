@@ -1,0 +1,69 @@
+{
+  "resources/assets/front/css/AjaxLoader.html": {
+    "file": "assets/grabbing.VtQRN4Po.html",
+    "src": "resources/assets/front/css/AjaxLoader.html"
+  },
+  "resources/assets/front/css/grabbing.html": {
+    "file": "assets/grabbing.VtQRN4Po.html",
+    "src": "resources/assets/front/css/AjaxLoader.html"
+  },
+  "resources/assets/front/css/main.css": {
+    "file": "assets/main_css.esCXy3mg.css",
+    "src": "resources/assets/front/css/main.css",
+    "isEntry": true
+  },
+  "resources/assets/front/fonts/fontawesome-webfont93e3.eot": {
+    "file": "assets/fontawesome-webfont93e3.CZGybeSB.eot",
+    "src": "resources/assets/front/fonts/fontawesome-webfont93e3.eot"
+  },
+  "resources/assets/front/fonts/fontawesome-webfont93e3.svg": {
+    "file": "assets/fontawesome-webfont93e3.C0ObScfS.svg",
+    "src": "resources/assets/front/fonts/fontawesome-webfont93e3.svg"
+  },
+  "resources/assets/front/fonts/fontawesome-webfont93e3.ttf": {
+    "file": "assets/fontawesome-webfont93e3.Wpzco0Ok.ttf",
+    "src": "resources/assets/front/fonts/fontawesome-webfont93e3.ttf"
+  },
+  "resources/assets/front/fonts/fontawesome-webfont93e3.woff": {
+    "file": "assets/fontawesome-webfont93e3.CX1dGGVw.woff",
+    "src": "resources/assets/front/fonts/fontawesome-webfont93e3.woff"
+  },
+  "resources/assets/front/fonts/fontawesome-webfont93e3.woff2": {
+    "file": "assets/fontawesome-webfont93e3.Ce8QJVGP.woff2",
+    "src": "resources/assets/front/fonts/fontawesome-webfont93e3.woff2"
+  },
+  "resources/assets/front/fonts/fontawesome-webfontd41d.eot": {
+    "file": "assets/fontawesome-webfont93e3.CZGybeSB.eot",
+    "src": "resources/assets/front/fonts/fontawesome-webfont93e3.eot"
+  },
+  "resources/assets/front/fonts/glyphicons-halflings-regular.eot": {
+    "file": "assets/glyphicons-halflings-regular.BUJKDMgK.eot",
+    "src": "resources/assets/front/fonts/glyphicons-halflings-regulard41d.eot"
+  },
+  "resources/assets/front/fonts/glyphicons-halflings-regular.svg": {
+    "file": "assets/glyphicons-halflings-regular.CSehLiBc.svg",
+    "src": "resources/assets/front/fonts/glyphicons-halflings-regular.svg"
+  },
+  "resources/assets/front/fonts/glyphicons-halflings-regular.ttf": {
+    "file": "assets/glyphicons-halflings-regular.DrwTMapi.ttf",
+    "src": "resources/assets/front/fonts/glyphicons-halflings-regular.ttf"
+  },
+  "resources/assets/front/fonts/glyphicons-halflings-regular.woff": {
+    "file": "assets/glyphicons-halflings-regular.BKjkU69z.woff",
+    "src": "resources/assets/front/fonts/glyphicons-halflings-regular.woff"
+  },
+  "resources/assets/front/fonts/glyphicons-halflings-regular.woff2": {
+    "file": "assets/glyphicons-halflings-regular.DzqM6ju8.woff2",
+    "src": "resources/assets/front/fonts/glyphicons-halflings-regular.woff2"
+  },
+  "resources/assets/front/fonts/glyphicons-halflings-regulard41d.eot": {
+    "file": "assets/glyphicons-halflings-regular.BUJKDMgK.eot",
+    "src": "resources/assets/front/fonts/glyphicons-halflings-regulard41d.eot"
+  },
+  "resources/assets/front/js/main.js": {
+    "file": "assets/main_js-C7az-rMu.js",
+    "name": "main_js",
+    "src": "resources/assets/front/js/main.js",
+    "isEntry": true
+  }
+}
