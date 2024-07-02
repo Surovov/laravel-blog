@@ -8,8 +8,7 @@ use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index']);
-
-
+Route::get('/post/{slug}', [HomeController::class, 'show'])->name('post.show');
 
 // Route::get('/', function () {
 //     return view('welcome');

@@ -9,6 +9,8 @@ export default defineConfig({
             input: [
                 'resources/assets/front/js/main.js',
                 'resources/assets/front/css/main.css',
+                'resources/css/error.css',
+
             ],
             refresh: true,
         }),

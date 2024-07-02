@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
-// use Carbon\Carbon;
+use Carbon\Carbon;
 // use \Storage;
 
 class Post extends Model
@@ -94,8 +94,17 @@ class Post extends Model
         }
         return '/uploads/' . $this->image;
     }
+ 
+    public function getDate()
+    {
+        return Carbon::createFromFormat('Y-m-d', $this->date)->format('F d, Y');
+    }
 
 
+    public function getCategoryId()
+    {
+        return $this->category != null ?  $this->category->id : null;
+    }
     // Category & Tags
     public function setCategory($id)
     {
@@ -174,5 +183,29 @@ class Post extends Model
     // }
     // мне ебаться не придется, так как type="data" уже изначально нормально хавает формат
 
+
+    public function hasPrevious()
+    {
+        return self::where('id', '<', $this->id)->max('id');
+    }
+    public function getPrevious()
+    {
+        $postID = $this->hasPrevious();
+        return self::find($postID);
+    }
+    public function hasNext()
+    {
+        return self::where('id', '>', $this->id)->min('id');
+    }
+    public function getNext()
+    {
+        $postID = $this->hasNext();
+        return self::find($postID);
+    }
+    public function related()
+    {
+        return self::all()->except($this->id);
+
+    }
 
 }
