@@ -183,6 +183,10 @@ class Post extends Model
     // }
     // мне ебаться не придется, так как type="data" уже изначально нормально хавает формат
 
+    public function hasCategory($value='')
+    {
+        return $this->category != null ? true : false;
+    }
 
     public function hasPrevious()
     {

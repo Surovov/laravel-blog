@@ -80,7 +80,8 @@
 			</div>
 
 			<div class="col-md-4" data-sticky_column>
-				@include('sidebar')
+                @include('sidebar')
+
             </div>
         </div>
     </div>

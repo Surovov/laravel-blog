@@ -12,15 +12,17 @@
     </div>
     <div class="post-content">
         <header class="entry-header text-center text-uppercase">
+            @if($post->hasCategory())
             <h6>
-                <a href="route('categories.show', $post->category->slug)"> {{ $post->getCategoryTitle() }}</a>
+                <a href="{{route('category.show', $post->category->slug)}}"> {{ $post->getCategoryTitle() }}</a>
             </h6>
             <h1 class="entry-title"><a href="{{route('post.show', $post->slug)}}">{{ $post->title }}</a></h1>
+            @endif
         </header>
         <div class="entry-content">
             <p>{!! Str::limit($post->content, 150) !!}</p>
             <div class="btn-continue-reading text-center text-uppercase">
-                <a href="route('post.show', $post->id)" class="more-link">Continue Reading</a>
+                <a href="{{route('post.show', $post->slug)}}" class="more-link">Continue Reading</a>
             </div>
         </div>
         <div class="social-share">
