@@ -9,13 +9,6 @@ use App\Models\Category;
 
 class SidebarData
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @return mixed
-     */
     public function handle(Request $request, Closure $next)
     {
         $popularPosts = Post::orderBy('views', 'desc')->take(3)->get();

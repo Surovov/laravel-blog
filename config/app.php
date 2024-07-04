@@ -123,4 +123,9 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    'middleware' => [
+        // Регистрация вашего middleware
+        \App\Http\Middleware\AdminMiddleware::class,
+    ],
+
 ];

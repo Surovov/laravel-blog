@@ -23,5 +23,6 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->make(\Illuminate\Contracts\Http\Kernel::class)
             ->pushMiddleware(SidebarData::class);
+            
     }
 }

@@ -6,6 +6,8 @@ use App\Models\User; // Добавьте правильный путь к мод
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
+
 
 class UsersController extends Controller
 {
@@ -53,7 +55,11 @@ class UsersController extends Controller
             $user = User::findOrFail($id);
             $validator = Validator::make($request->all(), [
                 'name' => 'required',
-                'email' => 'required|email|unique:users,email,' . $id,
+               'email' => [
+                    'required',
+                    'email',
+                     Rule::unique('users')->ignore(Auth::user()->id),
+                 ],
                 'password' => 'nullable',
                 'avatar' => 'nullable|image',
             ]);
