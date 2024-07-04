@@ -24,7 +24,7 @@
                 <div class="entry-content">
                     <p>{{ \Illuminate\Support\Str::limit($post->content, 150, '...') }}</p>
                     <div class="social-share">
-                        <span class="social-share-title pull-left text-capitalize">By $post->user->name On {{ $post->getDate() }}</span>
+                        <span class="social-share-title pull-left text-capitalize">By {{$post->author->name}} On {{ $post->getDate() }}</span>
                     </div>
                 </div>
             </div>

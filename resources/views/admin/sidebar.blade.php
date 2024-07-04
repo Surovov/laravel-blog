@@ -19,7 +19,7 @@
             <a href="{{ route('users.index') }}"><span uk-icon="icon: users"></span> Users</a>
         </li>
         <li class="{{ request()->is('admin/comments*') ? 'uk-active' : '' }}">
-            <a href="#"><span uk-icon="icon: comments"></span> Комментарии</a>
+            <a href="{{ route('comments.index') }}"><span uk-icon="icon: comments"></span> Комментарии</a>
         </li>
         <li class="{{ request()->is('admin/subscribers*') ? 'uk-active' : '' }}">
             <a href="#"><span uk-icon="icon: mail"></span> Подписота</a>

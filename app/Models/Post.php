@@ -28,7 +28,10 @@ class Post extends Model
         return $this->belongsTo(Category::class);
     }
 
-
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
     public function author()
     {
         return $this->belongsTo(User::class, 'user_id');
@@ -210,6 +213,10 @@ class Post extends Model
     {
         return self::all()->except($this->id);
 
+    }
+    public function getComments()
+    {
+        return $this->comments()->where('status', 1)->get();
     }
 
 }

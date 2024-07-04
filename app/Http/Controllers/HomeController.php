@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\Category;
 use App\Models\Tag;
-
+use App\Models\User;
 
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
@@ -21,7 +21,7 @@ class HomeController extends Controller
         $posts = Post::paginate(7);
         return view('pages.index', ['posts' => $posts]);
     }
-    
+
     public function sidebarData()
     {
         $popularPosts = Post::orderBy('views', 'desc')->take(3)->get();

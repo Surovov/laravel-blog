@@ -3,11 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoriesController;
+use App\Http\Controllers\Admin\AdminCommentsController;
+
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthController;
-use App\Http\Middleware\AdminMiddleware;
+use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\ProfileController;
 
+use App\Http\Middleware\AdminMiddleware;
 
 
 Route::get('/', [HomeController::class, 'index']);
@@ -29,7 +32,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
     Route::post('/profile', [ProfileController::class, 'store']);
-
+    Route::post('/comment', [CommentsController::class, 'store']);
+    
 
 });
 
@@ -44,6 +48,10 @@ Route::middleware([AdminMiddleware::class])->group(function () {
         Route::resource('/tags', TagsController::class)->except(['show']);
         Route::resource('/users', UsersController::class)->except(['show']);
         Route::resource('/posts', PostsController::class)->except(['show']);
+        Route::get('/comments', [AdminCommentsController::class, 'index'])->name('comments.index');
+        Route::get('/comments/toggle/{id}', [AdminCommentsController::class, 'toggle'])->name('comments.toggle');
+        Route::delete('/comments/{id}/destroy', [AdminCommentsController::class, 'destroy'])->name('comments.destroy');
+
     });
 });
 

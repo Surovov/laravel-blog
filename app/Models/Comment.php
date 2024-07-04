@@ -8,14 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Comment extends Model
 {
     use HasFactory;
+    
+    protected $fillable = ['text', 'post_id', 'user_id', 'status'];
 
     public function posts()
     {
-        return $this->hasOne(Post::class);
+        return $this->belongsTo(Post::class);
     }
     public function author()
     {
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function allow()
@@ -23,17 +25,20 @@ class Comment extends Model
         $this->status = 1;
         $this->save();
     }
-    public function dissalow()
+
+    public function disallow()
     {
         $this->status = 0;
         $this->save();
     }
-    public function toggleStatus($value)
+
+    public function toggleStatus()
     {
         if ($this->status == 0) {
-            return $this->allow();
+            $this->allow();
+        } else {
+            $this->disallow();
         }
-        return $this->dissalow();
     }
     public function remove()
     {
