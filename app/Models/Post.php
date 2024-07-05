@@ -10,6 +10,8 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
 // use \Storage;
+use Auth;
+
 
 class Post extends Model
 {
@@ -58,16 +60,17 @@ class Post extends Model
     {
         $post = new static; // Создается новый экземпляр модели Post
         $post->fill($fields); // Массово присваиваются значения атрибутов из $fields
-        $post->user_id = 1; // Устанавливается user_id (пока жестко заданный)
+        $post->user_id = Auth::user()->id; // Устанавливается user_id (пока жестко заданный)
         $post->save(); // Сохраняется новый пост в базе данных
         return $post; // Возвращается созданный пост
     }
 
-    public function edit($feilds)
+    public function edit($fields)
     {
         $this->fill($fields);
         $this->save();
     }
+
     public function remove()
     {   
         $this->removeImage();
@@ -135,17 +138,6 @@ class Post extends Model
         $this->status = Post::IS_PUBLIC;
         $this->save();
     }
-    public function toggleStatus($value)
-    {
-        if($value = null)
-        {
-            $this->setDraft();
-        }
-        else
-        {
-            $this->setPublic();
-        }
-    }
 
     // Featured
 
@@ -159,9 +151,21 @@ class Post extends Model
         $this->is_featured = 0;
         $this->save();
     }
+    public function toggleStatus($value)
+    {
+        if($value == 0) // Используем оператор сравнения, чтобы избежать ошибок
+        {
+            $this->setDraft();
+        }
+        else
+        {
+            $this->setPublic();
+        }
+    }
+
     public function toggleFeatured($value)
     {
-        if($value = null)
+        if($value == 0) // Используем оператор сравнения, чтобы избежать ошибок
         {
             $this->setStandart();
         }
@@ -170,6 +174,7 @@ class Post extends Model
             $this->setFeatured();
         }
     }
+
     public function getCategoryTitle()
     {
        return ($this->category !=null ) ? $this->category->title : 'Нет Категории';

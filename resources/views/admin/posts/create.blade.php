@@ -51,17 +51,18 @@
 
 <div class="uk-margin">
     <label>
-        {!! html()->checkbox('is_featured')->class('uk-checkbox')->checked(old('is_featured')) !!}
+        {!! html()->checkbox('is_featured', '1', old('is_featured'))->class('uk-checkbox') !!}
         Рекомендовать
     </label>
 </div>
 
 <div class="uk-margin">
     <label>
-        {!! html()->checkbox('status')->class('uk-checkbox')->checked(old('status')) !!}
+        {!! html()->checkbox('status', '1', old('status'))->class('uk-checkbox') !!}
         Черновик
     </label>
 </div>
+
 
 <div class="uk-margin">
     {!! html()->label('Полный текст', 'content')->attribute('class', 'uk-form-label') !!}

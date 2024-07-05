@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth; // Добавлено использование фасада Auth
 
 
 class UsersController extends Controller
@@ -58,7 +59,7 @@ class UsersController extends Controller
                'email' => [
                     'required',
                     'email',
-                     Rule::unique('users')->ignore(Auth::user()->id),
+                     Rule::unique('users')->ignore($user->id), // Изменено Auth::user()->id на $user->id
                  ],
                 'password' => 'nullable',
                 'avatar' => 'nullable|image',
@@ -77,6 +78,19 @@ class UsersController extends Controller
             return redirect()->route('users.index');
         }
 
+        public function toggleBan($id)
+        {
+            $user = User::findOrFail($id);
+            $user->toggleBan(!$user->isBanned());
+            return redirect()->route('users.index');
+        }
+
+        public function toggleAdmin($id)
+        {
+            $user = User::findOrFail($id);
+            $user->toggleAdmin(!$user->is_admin);
+            return redirect()->route('users.index');
+        }
 
 
 

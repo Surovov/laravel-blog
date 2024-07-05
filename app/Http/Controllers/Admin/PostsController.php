@@ -40,7 +40,7 @@ class PostsController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
+    {   
         $validator = Validator::make($request->all(), [
             'title' => 'required',
             'content' => 'required',
@@ -53,14 +53,21 @@ class PostsController extends Controller
                 ->withInput();
         }
 
-        $post = Post::add($request->all());
+        // Получение всех данных формы
+        $data = $request->all();
+        // Проверка состояния чекбоксов
+        $status = $request->has('status') ? 1 : 0;
+        $is_featured = $request->has('is_featured') ? 1 : 0;
+
+        // Создание поста с обновленными данными
+        $post = Post::add($data);
         $post->uploadImage($request->file('image'));
 
         $post->setCategory($request->get('category_id'));
         $post->setTags($request->get('tags'));
-
-        $post->toggleStatus($request->get('status'));
-        $post->toggleFeatured($request->get('is_featured'));
+        
+        $post->toggleStatus($status);
+        $post->toggleFeatured($is_featured);
 
         return redirect()->route('posts.index');
     }
@@ -85,7 +92,7 @@ class PostsController extends Controller
 
     /**
      * Update the specified resource in storage.
-     */
+         */
     public function update(Request $request, string $id)
     {
         $post = Post::findOrFail($id);
@@ -95,22 +102,32 @@ class PostsController extends Controller
             'date' => 'required',
             'image' => 'nullable|image',
         ]);
+
         if ($validator->fails()) {
-            return redirect()->route('posts.create')
+            return redirect()->route('posts.edit', $id)
                 ->withErrors($validator)
                 ->withInput();
         }
-        $post->update($request->all());
+
+        // Получение всех данных формы
+        $data = $request->all();
+        // Проверка состояния чекбоксов
+        $status = $request->has('status') ? 1 : 0;
+        $is_featured = $request->has('is_featured') ? 1 : 0;
+
+        // Обновление поста с новыми данными
+        $post->edit($data);
         $post->uploadImage($request->file('image'));
 
         $post->setCategory($request->get('category_id'));
         $post->setTags($request->get('tags'));
 
-        $post->toggleStatus($request->get('status'));
-        $post->toggleFeatured($request->get('is_featured'));
+        $post->toggleStatus($status);
+        $post->toggleFeatured($is_featured);
 
         return redirect()->route('posts.index');
     }
+
 
     /**
      * Remove the specified resource from storage.

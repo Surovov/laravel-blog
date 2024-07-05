@@ -23,10 +23,8 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
+        'name', 'email', 'description'
     ];
-
 
     /**
      * The attributes that should be hidden for serialization.
@@ -154,6 +152,10 @@ class User extends Authenticatable
         }
         return $this->ban();
 
+    }
+    public function isBanned()
+    {
+        return $this->status == self::IS_BANNED;
     }
 
 

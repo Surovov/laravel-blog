@@ -13,6 +13,11 @@
     {!! html()->label('Имя', 'name')->attribute('class', 'uk-form-label') !!}
     {!! html()->text('name')->attribute('class', 'uk-input') !!}
 </div>
+<div class="uk-margin">
+    <label for="description" class="uk-form-label">Description</label>
+    <textarea name="description" class="uk-textarea">{{ old('description', $user->description ?? '') }}</textarea>
+</div>
+
 
 <div class="uk-margin">
     {!! html()->label('E-mail', 'email')->attribute('class', 'uk-form-label') !!}

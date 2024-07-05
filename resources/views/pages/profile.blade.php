@@ -3,9 +3,6 @@
 @section('content')
 
 <div class="leave-comment mr0"><!--leave comment-->
-    @if(session('status'))
-        {{session('status')}}
-    @endif  
     <h3 class="text-uppercase">My profile</h3>
     <br>
 
@@ -18,6 +15,12 @@
                        placeholder="Name" value="{{$user->name}}" >
             </div>
         </div>
+        <!-- profile.blade.php -->
+        <div class="uk-margin">
+            <label for="description" class="uk-form-label">Description</label>
+            <p>{{ $user->description }}</p>
+        </div>
+
         <div class="form-group">
             <div class="col-md-12">
                 <input type="email" class="form-control" id="email" name="email"

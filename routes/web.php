@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\Admin\AdminCommentsController;
 use App\Http\Controllers\Admin\AdminSubscriptionsController;
+use App\Http\Controllers\Admin\UsersController;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthController;
@@ -53,6 +54,10 @@ Route::middleware([AdminMiddleware::class])->group(function () {
         Route::resource('/categories', CategoriesController::class)->except(['show']);
         Route::resource('/tags', TagsController::class)->except(['show']);
         Route::resource('/users', UsersController::class)->except(['show']);
+        Route::get('/users/toggleBan/{id}', [UsersController::class, 'toggleBan'])->name('users.toggleBan');
+        Route::get('/users/toggleAdmin/{id}', [UsersController::class, 'toggleAdmin'])->name('users.toggleAdmin');
+
+
         Route::resource('/posts', PostsController::class)->except(['show']);
         Route::get('/comments', [AdminCommentsController::class, 'index'])->name('comments.index');
         Route::get('/comments/toggle/{id}', [AdminCommentsController::class, 'toggle'])->name('comments.toggle');

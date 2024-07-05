@@ -14,7 +14,7 @@
                 <th class="uk-width-small">Аватар</th>
                 <th class="uk-width-auto">Имя</th>
                 <th class="uk-width-auto">E-mail</th>
-                <th class="uk-width-small">Действия</th>
+                <th class="uk-width-shrink">Действия</th>
             </tr>
         </thead>
         <tbody>
@@ -28,6 +28,17 @@
                 <td>{{ $user->email }}</td>
                 <td>
                     <a href="{{ route('users.edit', $user->id) }}" uk-icon="icon: pencil"></a>
+                    @if($user->status == \App\Models\User::IS_ACTIVE)
+                        <a href="{{ route('users.toggleBan', $user->id) }}" class="uk-icon-button" uk-icon="ban" ></a>
+                    @else
+                        <a href="{{ route('users.toggleBan', $user->id) }}" class="uk-icon-button" uk-icon="refresh" ></a>
+                    @endif
+                    @if($user->is_admin)
+                        <a uk-icon="pull" href="{{ route('users.toggleAdmin', $user->id) }}" class="uk-icon-button"  ></a>
+                    @else
+                        <a uk-icon="push"  href="{{ route('users.toggleAdmin', $user->id) }}" class="uk-icon-button"></a>
+                    @endif
+
                     <form action="{{ route('users.destroy', ['user' => $user->id]) }}" method="POST" style="display:inline">
                         @csrf
                         @method('DELETE')

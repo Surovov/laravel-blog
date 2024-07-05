@@ -2,11 +2,6 @@
 
 @section('content')
 <div>
-    @if(session('status'))
-        <div class="alert alert-success">
-            {{session('status')}}
-        </div>
-    @endif
     <article class="post">
         <div class="post-thumb">
             <a href="route('post.show', $post->slug)"><img src="{{ $post->getImage() }}" alt=""></a>
@@ -39,11 +34,11 @@
         </div>
     </article>
     
-    {{-- <div class="top-comment">
-        <img src="assets/images/comment.jpg" class="pull-left img-circle" alt="">
-        <h4>Rubel Miah</h4>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy hello ro mod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
-    </div> --}}
+    <div class="top-comment">
+        <img src="{{$post->author->getAvatar()}}" width="100px" height="100px" style="object-fit: cover;" class="pull-left img-circle" alt="">
+        <h4>{{ $post->author->name }}</h4>
+        <p>{{ $post->author->description }}</p>
+    </div>
     
     <div class="row">
         <div class="col-md-6">
