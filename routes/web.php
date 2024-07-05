@@ -4,11 +4,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\Admin\AdminCommentsController;
+use App\Http\Controllers\Admin\AdminSubscriptionsController;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SubsController;
+use App\Http\Controllers\TestMailController;
 
 use App\Http\Middleware\AdminMiddleware;
 
@@ -17,7 +20,10 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/post/{slug}', [HomeController::class, 'show'])->name('post.show');
 Route::get('/tag/{slug}', [HomeController::class, 'tag'])->name('tag.show');
 Route::get('/category/{slug}', [HomeController::class, 'category'])->name('category.show');
-
+Route::post('/subscribe/', [SubsController::class, 'subscribe'])->name('subscribe');
+// test email
+Route::get('/send-test-mail', [TestMailController::class, 'sendTestMail']);
+Route::get('/verify/{token}', [SubsController::class, 'verify'])->name('verify');
 
 // Группа маршрутов для гостей (незарегистрированных пользователей)
 Route::middleware(['guest'])->group(function () {
@@ -51,7 +57,7 @@ Route::middleware([AdminMiddleware::class])->group(function () {
         Route::get('/comments', [AdminCommentsController::class, 'index'])->name('comments.index');
         Route::get('/comments/toggle/{id}', [AdminCommentsController::class, 'toggle'])->name('comments.toggle');
         Route::delete('/comments/{id}/destroy', [AdminCommentsController::class, 'destroy'])->name('comments.destroy');
-
+        Route::resource('/subscriptions', AdminSubscriptionsController::class);
     });
 });
 

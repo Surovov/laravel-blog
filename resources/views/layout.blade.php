@@ -81,6 +81,9 @@
         <div class="row">
             <div class="col-md-8">
                 @include('admin.errors')
+                @if(session('status'))
+                    <div class="alert alert-info">{{session('status')}}</div>
+                @endif
 				@yield('content')
 			</div>
 
